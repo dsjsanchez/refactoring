@@ -2,15 +2,13 @@ package modelos;
 
 import java.util.ArrayList;
 
-public class Profesor {
+public class Profesor extends persona {
     public String codigo;
-    public String nombre;
-    public String apellido;
-    public int edad;
-    public String direccion;
-    public String telefono;
     public InformacionAdicionalProfesor info;
-    public ArrayList<Paralelo> paralelos;
+    public int añosdeTrabajo;
+    public String facultad;
+    public double BonoFijo;
+  
 
     public Profesor(String codigo, String nombre, String apellido, String facultad, int edad, String direccion, String telefono) {
         this.codigo = codigo;
@@ -26,5 +24,11 @@ public class Profesor {
         paralelos.add(p);
     }
     
+   
+    
+    public double calcularSueldo(Profesor prof){
+        return prof.añosdeTrabajo*600 + prof.BonoFijo;
+    }  
+
     
 }
